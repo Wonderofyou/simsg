@@ -407,7 +407,7 @@ def main(args):
 
   got_checkpoint = args.checkpoint is not None
   if got_checkpoint:
-    checkpoint = torch.load(args.checkpoint)
+    checkpoint = torch.load(args.checkpoint,weights_only=False)
     print('Loading model from ', args.checkpoint)
     run_model(args, checkpoint, output_dir)
   else:
